@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8D5B7"/>
+      <stop offset="50%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <!-- Left earring -->
+  <circle cx="280" cy="150" r="20" fill="url(#gold)"/>
+  <line x1="280" y1="170" x2="280" y2="280" stroke="url(#gold)" stroke-width="4"/>
+  <polygon points="280,280 310,320 280,420 250,320" fill="url(#gold)"/>
+  <polygon points="280,280 310,320 280,340 250,320" fill="#F5DEB3" opacity="0.7"/>
+  <circle cx="265" cy="300" r="3" fill="#fff" opacity="0.7"/>
+  <!-- Right earring -->
+  <circle cx="520" cy="150" r="20" fill="url(#gold)"/>
+  <line x1="520" y1="170" x2="520" y2="280" stroke="url(#gold)" stroke-width="4"/>
+  <polygon points="520,280 550,320 520,420 490,320" fill="url(#gold)"/>
+  <polygon points="520,280 550,320 520,340 490,320" fill="#F5DEB3" opacity="0.7"/>
+  <circle cx="505" cy="300" r="3" fill="#fff" opacity="0.7"/>
+</svg>

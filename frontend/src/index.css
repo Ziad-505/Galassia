@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for Galassia Brand */
+:root {
+  --gold-light: #E8D5B7;
+  --gold: #D4AF37;
+  --gold-dark: #B8860B;
+  --champagne: #F7E7CE;
+  --ivory: #FFFFF0;
+  --charcoal: #1a1a2e;
+  --midnight: #0f0f1a;
+  --platinum: #E5E4E2;
+}
+
+/* Custom Font Classes */
+.font-galassia {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.15em;
+}
+
+.font-elegant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-modern {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Elegant Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #E8D5B7 0%, #D4AF37 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer Animation for Jewelry */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Sparkle Animation */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Diamond Rotate Animation */
+@keyframes diamondRotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-diamond-rotate {
+  animation: diamondRotate 10s linear infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow Effect */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 0 60px rgba(212, 175, 55, 0.3);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Pulse Gold */
+@keyframes pulseGold {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulseGold 2s ease-in-out infinite;
+}
+
+/* Elegant Button Styles */
+.btn-gold {
+  @apply px-6 py-3 bg-gradient-to-r from-yellow-700 via-yellow-600 to-yellow-700 text-white font-elegant tracking-wider transition-all duration-300;
+  background-size: 200% 100%;
+}
+
+.btn-gold:hover {
+  background-position: right center;
+  @apply shadow-lg;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Luxury Card Style */
+.luxury-card {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-yellow-700/30 rounded-lg;
+  backdrop-filter: blur(10px);
+}
+
+.luxury-card:hover {
+  @apply border-yellow-600/50;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+/* Diamond Pattern Background */
+.diamond-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23D4AF37' fill-opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37, #B8860B);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #E8D5B7, #D4AF37);
+}
+
+/* Selection Color */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #fff;
+}
+
+/* Input Focus Styles */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+/* Hero Section Overlay */
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 26, 0.95) 0%,
+    rgba(26, 26, 46, 0.85) 50%,
+    rgba(15, 15, 26, 0.95) 100%
+  );
+}
+
+/* Jewelry Card Hover Effect */
+.jewelry-card {
+  @apply relative overflow-hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jewelry-card::before {
+  content: '';
+  @apply absolute inset-0 opacity-0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.1) 50%,
+    transparent 100%
+  );
+  transition: opacity 0.5s ease;
+}
+
+.jewelry-card:hover::before {
+  @apply opacity-100;
+}
+
+.jewelry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(212, 175, 55, 0.1);
+}
+
+/* Elegant Divider */
+.elegant-divider {
+  @apply relative h-px bg-gradient-to-r from-transparent via-yellow-600/50 to-transparent my-8;
+}
+
+.elegant-divider::before {
+  content: '◆';
+  @apply absolute left-1/2 -translate-x-1/2 -top-3 text-yellow-600 text-sm;
+}
+
+/* Loading Spinner Gold */
+.spinner-gold {
+  border: 3px solid rgba(212, 175, 55, 0.1);
+  border-top-color: #D4AF37;
+}
+
+/* Price Tag Style */
+.price-tag {
+  @apply text-2xl font-elegant;
+  background: linear-gradient(135deg, #E8D5B7, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Badge Style */
+.badge-featured {
+  @apply absolute top-4 right-4 px-3 py-1 text-xs font-modern uppercase tracking-wider;
+  background: linear-gradient(135deg, #D4AF37, #B8860B);
+  color: #1a1a2e;
+}
+
+/* Smooth Page Transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+/* Star Rating */
+.star-gold {
+  color: #D4AF37;
+  filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.5));
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .font-galassia {
+    letter-spacing: 0.1em;
+  }
+}
