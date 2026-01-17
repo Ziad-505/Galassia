@@ -48,10 +48,13 @@ export const useUserStore = create((set, get) => ({
 	checkAuth: async () => {
 		set({ checkingAuth: true });
 		try {
-			const response = await axios.get("/auth/profile");
+			// Mark this as an auth check request - don't retry on 401
+			const response = await axios.get("/auth/profile", {
+				_skipAuthRefresh: true
+			});
 			set({ user: response.data, checkingAuth: false });
 		} catch (error) {
-			console.log(error.message);
+			// Silently handle - user is not logged in, which is expected
 			set({ checkingAuth: false, user: null });
 		}
 	},
@@ -81,7 +84,8 @@ axios.interceptors.response.use(
 	(response) => response,
 	async (error) => {
 		const originalRequest = error.config;
-		if (error.response?.status === 401 && !originalRequest._retry) {
+		// Skip refresh for auth check requests (expected 401) or already retried requests
+		if (error.response?.status === 401 && !originalRequest._retry && !originalRequest._skipAuthRefresh) {
 			originalRequest._retry = true;
 
 			try {
